@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',Arial,sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background: #efefef;
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+
+.back{
+    background: #ffffff;
+    padding: 15px;
+    display: none;
+}
+.bac{
+    background: #ffffff;
+    padding: 15px;
+}
+
+
+div {
+    min-height: 50px;
+    width: 800px;
+    margin: 10px;
+}
+
+.quests{
+    display: flex;
+    margin: 0 auto;
+    width: 800px;
+    flex-wrap: wrap;
+}
+
+#FIO, .que7Answ, .que8Answ{
+    min-width: 450px;
+    border-radius: 5px;
+}
+
+i{
+    font-family: 'Times New Roman';
+    font-size: 22px;
+}
+
+.container{
+    display: block;
+    position: fixed;
+    z-index: 1600;
+    left: 0px;
+    top: 0px;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    overflow: auto;
+    margin: 0;
+   }
+
+.startMessage{
+    margin: 100px auto;
+    padding: 20px;
+    width: 40%;
+    z-index: 1700;
+    background-color: #efefef;
+    text-align: center;
+    font-size: 30px;
+}
+
+#r{
+    float: right;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70px;
+    z-index: 55;
+}
+
+.endContainer{
+    display: none;
+    position: fixed;
+    z-index: 1600;
+    left: -10px;
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    overflow: auto;
+}
+.endMessage{
+    margin: 100px auto;
+    padding: 20px;
+    width: 40%;
+    z-index: 1700;
+    background-color: #efefef;
+    text-align: center;
+    font-size: 30px;
+}
+
+.result, .badAnsw, .closeStartMessage, .closeEndMessage, .showAppend{
+    border-radius: 5px;
+    min-height: 25px;
+    min-width: 170px;
+    margin: 5px;
+    font-size: 28px;
+    background-color: #5781e1;
+    color: #fff;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.result:hover, .badAnsw:hover, .closeStartMessage:hover, .closeEndMessage:hover, .showAppend:hover{cursor: pointer;
+    background-color: #1f318e !important;
+    color: #ffffff !important;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+pre{
+    font-family: Lucida Console;
+    background-color: #fff;
+    height: 300px;
+    width: 820px;
+    overflow: scroll;
+    margin: 0;
+}
+.appendix{
+    margin: 0;
+    width: 820px;
+    display: none;
+    animation-duration: 2s, 10s;
+}
+
+.sho{
+    display: block;
+    animation-duration: 2s, 10s;
+}
+
+.calculator{
+    float: right;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.calc{
+    width: 100px;
+}
+
+.calculator div{
+    display:inline-flex;
+    width: 20px;
+    text-align: center;
+    margin: 0 0 0 13px;
+    padding: 0;
+    min-height: 35px;
+}
+
+#notes{
+    float: right;
+    position: fixed;
+    top: 200px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 170px;
+    z-index: 55;
+}
+.notesIn{
+    width: 300px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+
+}
