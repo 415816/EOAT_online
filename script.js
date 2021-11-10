@@ -906,24 +906,24 @@ function checkAnsw() {
     scor.innerHTML = score;
     appraisal.innerHTML = itog;
 
-    /* $(function() {
+    $(function() {
             let request = {
                 'FIO': $(FIO).val(),
                 'score': score,
-                'ball': ball
+                'ball': itog
             }
             $.post('/api.php', request, function (response) {
                 if (response != '1') { alert('Что-то пошло не так...');}
             });
             return false;
-        }); */
+        });
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api.php', true);
-    let request = {
-        'FIO': FIO.value,
-        'score': score,
-        'ball': itog
-    }
-    xhr.send([request]);
+    // let xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/api.php', true);
+    // let request = {
+    //     'FIO': FIO.value,
+    //     'score': score,
+    //     'ball': itog
+    // }
+    // xhr.send([request]);
 }
