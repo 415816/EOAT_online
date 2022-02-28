@@ -742,7 +742,19 @@ function defferentSeries2(Sc1, Sc3) {
     return [Tc1, Tc3, Tc2, S2];
 }
 
-closeStartMessage.onclick = () => {
+closeStartMessage.addEventListener('click', function (e) {
+    if (e)  {
+        startExam();
+    }
+})
+
+FIO.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        startExam();
+    }
+})
+
+const startExam = function () {
     if (FIO.value != 0) {
         container.style.display = "none";
 
@@ -884,23 +896,36 @@ function checkAnsw() {
         score += 6;
     } else {
         qu8.setAttribute("value", "false");
-    }
-
+    }  
+  
 
     if (score > 18) {
-        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")){
-        itog = '"отлично". Оценка может быть выставлена только при наличии письма с фразой "к защите"';}
-        else {itog = '"неудовлетворительно" (правильное выполнение хотя бы одного из двух последних заданий является необходимым условием для получения положительной оценки, к сожалению, Вы это условие не выполнили). Пересдача по вторникам, время и аудиторию Вы можете уточнить на стенде у 307 аудитории либо в группе ВК: https://vk.com/suti_roat'}
+        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")) {
+            itog = '"отлично". Оценка может быть выставлена только при наличии письма с фразой "к защите"';
+            endContainer.classList.add('good');
+        } else {
+            itog = '"неудовлетворительно". По поводу пересдачи уточняйте отдельно в MS Teams'
+            endContainer.classList.add('bad');
+        }
     } else if (score > 15) {
-        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")){
-            itog = '"хорошо". Оценка может быть выставлена только при наличии письма с фразой "к защите"';}
-        else {itog = '"неудовлетворительно" (правильное выполнение хотя бы одного из двух последних заданий является необходимым условием для получения положительной оценки, к сожалению, Вы это условие не выполнили). Пересдача по вторникам, время и аудиторию Вы можете уточнить на стенде у 307 аудитории либо в группе ВК: https://vk.com/suti_roat'}
+        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")) {
+            itog = '"хорошо". Оценка может быть выставлена только при наличии письма с фразой "к защите"';
+            endContainer.classList.add('good');
+        } else {
+            itog = '"неудовлетворительно". По поводу пересдачи уточняйте отдельно в MS Teams'
+            endContainer.classList.add('bad');
+        }
     } else if (score > 7) {
-        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")){
-            itog = '"удовлетворительно". Оценка может быть выставлена только при наличии письма с фразой "к защите"';}
-        else {itog = '"неудовлетворительно" (правильное выполнение хотя бы одного из двух последних заданий является необходимым условием для получения положительной оценки, к сожалению, Вы это условие не выполнили). Пересдача по вторникам, формат, время и аудиторию Вы можете уточнить на стенде у 307 аудитории либо в группе ВК: https://vk.com/suti_roat'}
+        if ((qu7.getAttribute("value") !== "false") || (qu8.getAttribute("value") !== "false")) {
+            itog = '"удовлетворительно". Оценка может быть выставлена только при наличии письма с фразой "к защите"';
+            endContainer.classList.add('good');
+        } else {
+            itog = '"неудовлетворительно". По поводу пересдачи уточняйте отдельно в MS Teams'
+            endContainer.classList.add('bad');
+        }
     } else {
-        itog = '"неудовлетворительно". Пересдача по вторникам, формат, время и аудиторию Вы можете уточнить на стенде у 307 аудитории либо в группе ВК: https://vk.com/suti_roat';
+        itog = '"неудовлетворительно". По поводу пересдачи уточняйте отдельно в MS Teams';
+        endContainer.classList.add('bad');
     }
     toFio.innerHTML = FIO.value;
     scor.innerHTML = score;

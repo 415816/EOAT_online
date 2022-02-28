@@ -91,6 +91,15 @@ i{
     background: rgba(0, 0, 0, 0.98);
     overflow: auto;
 }
+
+.endContainer.good{
+    background: rgba(33, 189, 1, 0.98);
+}
+
+.endContainer.bad{
+     background: rgba(196, 0, 0, 0.98);
+ }
+
 .endMessage{
     margin: 100px auto;
     padding: 20px;
